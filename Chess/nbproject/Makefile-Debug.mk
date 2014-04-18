@@ -35,6 +35,17 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Bishop.o \
+	${OBJECTDIR}/Board.o \
+	${OBJECTDIR}/ChessFigure.o \
+	${OBJECTDIR}/King.o \
+	${OBJECTDIR}/Knight.o \
+	${OBJECTDIR}/LinkList.o \
+	${OBJECTDIR}/Pawn.o \
+	${OBJECTDIR}/Queen.o \
+	${OBJECTDIR}/Rook.o \
+	${OBJECTDIR}/UnitTesting.o \
+	${OBJECTDIR}/main_CP.o \
 	${OBJECTDIR}/main_Chess.o
 
 
@@ -62,10 +73,65 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/chess.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/chess ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/Bishop.o: Bishop.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Bishop.o Bishop.cpp
+
+${OBJECTDIR}/Board.o: Board.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Board.o Board.cpp
+
+${OBJECTDIR}/ChessFigure.o: ChessFigure.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ChessFigure.o ChessFigure.cpp
+
+${OBJECTDIR}/King.o: King.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/King.o King.cpp
+
+${OBJECTDIR}/Knight.o: Knight.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Knight.o Knight.cpp
+
+${OBJECTDIR}/LinkList.o: LinkList.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LinkList.o LinkList.cpp
+
+${OBJECTDIR}/Pawn.o: Pawn.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Pawn.o Pawn.cpp
+
+${OBJECTDIR}/Queen.o: Queen.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Queen.o Queen.cpp
+
+${OBJECTDIR}/Rook.o: Rook.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Rook.o Rook.cpp
+
+${OBJECTDIR}/UnitTesting.o: UnitTesting.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UnitTesting.o UnitTesting.cpp
+
+${OBJECTDIR}/main_CP.o: main_CP.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_CP.o main_CP.cpp
+
 ${OBJECTDIR}/main_Chess.o: main_Chess.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_Chess.o main_Chess.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_Chess.o main_Chess.cpp
 
 # Subprojects
 .build-subprojects:
