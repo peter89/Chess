@@ -16,7 +16,7 @@ Board::Board() {
         board_.insert(  Pawn('P', ChessFigure::WHITE, Point(i,2)) );
         board_.insert(  Pawn('p', ChessFigure::BLACK, Point(i,7)) );
     }
-        board_.insert( Pawn('K', ChessFigure::WHITE, Point(4,1)) );
+        //board_.insert( Pawn('K', ChessFigure::WHITE, Point(4,1)) );
         //board_.insert( Pawn('K', ChessFigure::BLACK, Point(4,7)) );
         board_.print();
 }
