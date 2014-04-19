@@ -9,17 +9,15 @@
 #define	PAWN_H
 #include "Point.h"
 #include "ChessFigure.h"
+#include "LinkList.h"
 
 class Pawn : public ChessFigure {
 public:
-    Pawn(){}
-    Pawn(char type, Color color, Point pos ): ChessFigure(type, color, pos){}
+    Pawn(Color color, Point pos) : ChessFigure('P', color, pos){ this->addMmoves(); }
     virtual ~Pawn(){}
-    
-        bool move(Point p);
-        
-private:
 
+private:
+    addMmoves();
 };
 
 #endif	/* PAWN_H */

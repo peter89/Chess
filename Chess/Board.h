@@ -10,7 +10,7 @@
 
 #include "LinkList.h"
 
-class Board {
+class Board : public LinkList{
 public:
     Board();
     Board(const Board& orig);
@@ -20,8 +20,6 @@ private:
     int width_;
     int hight_;
     LinkList board_;
-    
-    
 };
 
 #endif	/* BOARD_H */

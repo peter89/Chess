@@ -61,11 +61,6 @@ public:
     int getSize(){return size_;}
     void print() const;
     
-
-    iterator begin();
-    iterator end();
-
-    
 private:
     LinkNode* firstElement_;
     int size_;

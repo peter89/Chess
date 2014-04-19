@@ -5,22 +5,14 @@
  * Unit Testing for the class "Point"
  */
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-//#include <vector>
-
-#include "UnitTesting.h" // for the Unit Testing Assertions
-#include "Point.h"       // for the Point Class
-#include "LinkList.h"
-
-#include "ChessFigure.h"
-#include "Pawn.h"
-
-#include "Board.h"
+#include "UnitTestsMain.h"
 
 int main( int argc, char* argv[] ) {
+    UnitTestsMain test;
+    test.TestBoardClass();
+    //test.TestPointClass();
+    
+    
     /*
     void insert(Point point, char figure);
     LinkNode* getLinkNode(Point p);
@@ -29,8 +21,8 @@ int main( int argc, char* argv[] ) {
     bool clear(Point point);
     */
     
-    Board board;
-    board.print_board();
+   // Board board;
+   // board.print_board();
     
     
     //Schachfiguren
@@ -51,24 +43,7 @@ int main( int argc, char* argv[] ) {
     }
      */
     /*
-    Point point(3,2);
-    
-    elemType dame(point, 'D');
-    elemType bauer(point, 'B');
-    
-    LinkList list;
-    assertTrue(list.getSize() == 0, "0 Item in List" );
-    
-    list.insert(bauer);
-    list.print();
-    list.insert(dame);
-    
-    Point point2(2,2);
-    elemType bauer2(point2, 'B');
-    list.insert(bauer2);
-    
-    assertTrue(list.getSize() == 2, "2 Item in List" );
-    list.print();
+
 
 */
 
@@ -103,50 +78,7 @@ int main( int argc, char* argv[] ) {
 //    assertTrue(list.move(Point('B',3),Point('B',4)) == false, "Not allowed to kill own figure" );
     
     
-    
-    //
-    
-    
-    
-    std::cout << "Starting Unit Tests for Class Point" << std::endl;
-
-    Point p, q;
-    assertTrue( (p == q), "All Points are constructed equal" );
-    assertTrue( !(p != q), "All Points are constructed not equal" );
-
-    Point r( p );
-    assertTrue( (p == r), "Copy Constructor constructs equal copies" );
-
-    Point TwiceTwo( 2, 2 );
-    assertTrue( (TwiceTwo != p), "Point (2, 2) =/= simple constructor points" );
-
-    Point origin( 0, 0 );
-    assertTrue( (TwiceTwo != origin), "Point (2, 2) =/= (0, 0)" );
-    assertTrue( (origin == p), "Point (0, 0) == simple constructor point" );
-
-    Point FourFour( 4, 4 );
-    Point TwiceTwiceTwo = TwiceTwo + TwiceTwo;
-    assertTrue( (TwiceTwiceTwo == FourFour), "Point (2, 2) + (2,2) == (4, 4)" );
-
-    TwiceTwo += TwiceTwo;
-    assertTrue( (TwiceTwo == FourFour), "Point (2, 2) += (2,2) == (4, 4)" );
-
-    Point OneThree( 1, 3 );
-    Point ThreeOne( 3, 1 );
-    assertTrue( (OneThree != ThreeOne), "Point (1, 3) =/= (3, 1)" );
-
-    Point TwoSix( 2, 6 );
-    assertTrue( (TwoSix == OneThree * 2), "Point (2, 6) == (1,3) * 2" );
-
-    Point TwiceOneThree = OneThree;
-    TwiceOneThree *= 2;
-    assertTrue( (TwoSix == TwiceOneThree), "Point (2, 6) == (1,3) *= 2" );
-
-    Point MinusOneThree = OneThree * -1;
-    Point Nix = OneThree + MinusOneThree;
-    assertTrue( (origin == Nix), "Point p + -p = Nothing at all (origin)" );
-
-    std::cout << "Finished Unit Tests for Class Point" << std::endl;
+   
     //std::vector<std::vector<int>> twod;
     
     return 0; // i.e. OK

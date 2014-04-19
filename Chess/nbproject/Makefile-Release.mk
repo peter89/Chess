@@ -45,8 +45,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/Queen.o \
 	${OBJECTDIR}/Rook.o \
 	${OBJECTDIR}/UnitTesting.o \
-	${OBJECTDIR}/main_CP.o \
-	${OBJECTDIR}/main_Chess.o
+	${OBJECTDIR}/UnitTestsMain.o \
+	${OBJECTDIR}/main_CP.o
 
 
 # C Compiler Flags
@@ -123,15 +123,15 @@ ${OBJECTDIR}/UnitTesting.o: UnitTesting.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UnitTesting.o UnitTesting.cpp
 
+${OBJECTDIR}/UnitTestsMain.o: UnitTestsMain.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UnitTestsMain.o UnitTestsMain.cpp
+
 ${OBJECTDIR}/main_CP.o: main_CP.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_CP.o main_CP.cpp
-
-${OBJECTDIR}/main_Chess.o: main_Chess.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_Chess.o main_Chess.cpp
 
 # Subprojects
 .build-subprojects:

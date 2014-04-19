@@ -18,7 +18,7 @@ public:
 
     bool move(ChessFigure f, Point p);
 private:
-
+    addMmoves();
 };
 
 #endif	/* KING_H */

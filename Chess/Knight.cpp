@@ -7,3 +7,9 @@
 
 #include "Knight.h"
 
+bool Pawn::addMmoves(){
+        moves_.insert( Point(1,1) );
+        moves_.insert( Point(1,-1) );
+        moves_.insert( Point(-1,-1) );
+        moves_.insert( Point(-1,1) );
+}

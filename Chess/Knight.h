@@ -14,10 +14,12 @@ class Knight : public ChessFigure {
 public:
     Knight(){}
     Knight(char type, Color color, Point pos ): ChessFigure(type, color, pos){}
+   
+    Knight(Color color, Point pos) : ChessFigure('N', color, pos){ this->addMmoves(); }
     virtual ~Knight(){}
     
-    bool move(ChessFigure f, Point p);
 private:
+addMmoves();
 
 };
 
