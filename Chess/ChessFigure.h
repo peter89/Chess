@@ -9,51 +9,56 @@
 #define	CHESSFIGURE_H
 
 #include "Point.h"
+#include "LinkList.h"
+#include <list>
 
 
 enum Color{ WHITE=0, BLACK };
     
 class ChessFigure {
 public:
-    enum Color{ WHITE=0, BLACK };
    
     ChessFigure();
-    ChessFigure(char type, Color color, Point point) : type_(type), color_(color), position_(point){}
-    
+    ChessFigure(char type, Color color, Point point) : position_(point){
+    type_ = (( color == Color.WHITE )? toupper(type) else tolower(type));
+    }
+       
     ChessFigure(const ChessFigure& orig);
     virtual ~ChessFigure();
 
+    //Location
     Point getLocation() const { return position_; }
     void setLocation(Point point){position_= point;}
     
-    Color getColor(){return color_; }
-    void setColor(Color c){ color_= c; }
+    //Color
+    Color getColor(){ return (isupper(type_))? Color.WHITE : Color.BLACK; }
+    void setColor(Color c){  if( c == WHITE ) toupper(type_);  else tolower(type_); }
+    bool isWhite(){ return isupper(type_); }
+    bool sameColor(Color color){ return (getColor()==color); }
     
+    //Type
     char getType(){ return type_; }
     void setType(char type){ type_= type; }
     
+    //List of Moves
+    std::list* GetListOfMmoves(){ return moves_;  }
+    addMmove(Point p){ moves_.insert(p); }   
 
-    bool operator==( ChessFigure otherElement) const
-    {
-        return((type_== otherElement.type_)&&(color_== otherElement.color_));
+    bool Pawn::move(Point p){
+    for(Point& move : moves_){
+        if ( this.getLocation()+move == p ) return true;
     }
-
-//bool move(ChessFigure f, Point p){
-//LinkList allowed_moves;  //liste mit möglichen zügen
-//
-//    if (f.getColor() == WHITE)     
-//      allowed_moves.insert( f.getLocation() + Point (0,1) );
-//    else  allowed_moves.insert( f.getLocation() + Point (0,-1) );
-//
-//    if ( allowed_moves.search_for(p) != NULL) return true;
-//
-//return false;
-//}
-
-
+    return false;
+    }
+    
 protected:
+   // LinkList moves_
+    std::list<Point*> moves_;
+
+private:
+    //Typ der Schachfigur
     char type_;
-    Color color_;
+   // Color color_;
     Point position_;
     
 };
